@@ -4,7 +4,8 @@ def prime_factors(n):
     d = 2
     while n > 1:
         while n % d == 0:
-            factors.append(d)
+            if d not in factors:
+				factors.append(d)
             n /= d
         d = d + 1
 
@@ -12,5 +13,6 @@ def prime_factors(n):
 
 
 pfs = prime_factors(int(raw_input("Enter number:")))
+print "All prime factors :: %r" %pfs
 largest_prime_factor = max(pfs)
 print "largest_prime_factor :: %r" %largest_prime_factor
